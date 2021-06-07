@@ -68,3 +68,8 @@ covid_df2['Fatality-Ratio'] = covid_df2['Deaths']/covid_df2['Confirmed']
 fatalityCureRatioPlot(covid_df2,"Fatality-Ratio","red")
 covid_df2['Cure-Ratio'] = covid_df2['Cured']/covid_df2['Confirmed']
 fatalityCureRatioPlot(covid_df2,"Cure-Ratio","blue")
+
+# Performed inner join on the two data frames df and gf on the key Date
+gf=pd.read_csv("/home/markv/Downloads/gg/StatewiseTestingDetails.csv")
+merge1= pd.merge(gf,df,how='inner',on='Date')
+print(merge1.head())
