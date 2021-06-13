@@ -27,6 +27,23 @@ print(df.shape)
 print(df.info())
 print(df.describe())
 
+#bar chart
+x = df['Confirmed'].sum()
+y = df['Cured'].sum()
+z= df['Deaths'].sum()
+active= x-y
+print('Total Confirmed cases =',x)
+print('Total Cured cases =',y)
+print('Total Active cases =',active)
+print('Total Death cases =',z)
+barp = sns.barplot(x=['Confirmed','Cured','Deaths','active'],y=[x,y,z,active])
+barp.set_yticklabels(labels=(barp.get_yticks()*1).astype(int))
+
+#pi chart
+data = {'Status': [2085583,6243,1636790]}
+pi_chart = pd.DataFrame(data,columns=['Status'],index = ['Confirmed','Deaths','Cured'])
+pi_chart.plot.pie(y='Status',figsize=(10, 20),autopct='%1.1f%%', startangle=90)
+
 # Performing data cleaning.
 print(df.isnull().sum())
 
