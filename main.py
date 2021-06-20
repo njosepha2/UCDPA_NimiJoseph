@@ -19,7 +19,7 @@ def fatalityCureRatioPlot(covid19_df_latest,columnName,colour):
         plt.show()
 
 # Importing the data set from our location using pandas.
-df=pd.read_csv("/home/markv/Downloads/gg/covid_19_india.csv")
+df=pd.read_csv(r"data/covid_19_india.csv")
 print(df.head(10))
 print(df.shape)
 
@@ -87,6 +87,6 @@ covid_df2['Cure-Ratio'] = covid_df2['Cured']/covid_df2['Confirmed']
 fatalityCureRatioPlot(covid_df2,"Cure-Ratio","blue")
 
 # Performed inner join on the two data frames df and gf on the key Date
-gf=pd.read_csv("/home/markv/Downloads/gg/StatewiseTestingDetails.csv")
+gf=pd.read_csv(r"data/StatewiseTestingDetails.csv")
 merge1= pd.merge(gf,df,how='inner',on='Date')
 print(merge1.head())
