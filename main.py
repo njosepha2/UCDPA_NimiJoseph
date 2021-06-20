@@ -73,7 +73,7 @@ barPlot(covid19_df_latest_confirmed.sort_values(by=['Confirmed'], ascending = Fa
 
 # Plotting a bar graph to see the top five states cured covid 19 cases in the country.
 covid19_df_latest_cured=covid19_df_latest
-barPlot(covid19_df_latest_cured.sort_values(by=['Cured'], ascending = False),"Confirmed","green")
+barPlot(covid19_df_latest_cured.sort_values(by=['Cured'], ascending = False),"Cured","green")
 
 # Indepth analysis of 4 major states
 dataFrame=dataFrame.loc[(dataFrame['State'] == 'Kerala') | (dataFrame['State'] == 'Maharashtra')| (dataFrame['State'] == 'Karnataka')|(dataFrame['State'] == 'Tamil Nadu')]
